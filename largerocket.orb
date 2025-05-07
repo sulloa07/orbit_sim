@@ -1,0 +1,39 @@
+// Complex orbital insertion simulation
+rocket LargeRocket {
+  mass = 82
+  fuel = 80
+  thrust = 5300
+  burnRate = 0.5
+  diameter = 0.3048
+  Cd = 0.6  // more aerodynamic
+}
+
+environment {
+  gravity = 9.81
+}
+
+flight HighAltitudeInsertion {
+  at t=0 {
+    angle = 90      // vertical liftoff
+    power = 100%    // full thrust
+  }
+  
+  at t=5 {
+    angle = 88
+  }
+  at t=10 {
+    angle = 85
+  }
+  at t=15 {
+    angle = 82
+  }
+  at t=20 {
+    angle = 81
+  }
+}
+
+simulate OrbitInsertion {
+  display trajectory
+  report max_altitude
+  report range
+}

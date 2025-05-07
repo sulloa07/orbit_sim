@@ -1,0 +1,24 @@
+rocket MediumRocket {
+  mass = 2.5
+  fuel = 1.8
+  thrust = 50
+  burnRate = 0.2
+  diameter = 0.08
+  Cd = 1.0
+}
+
+environment {
+  gravity = 9.81
+}
+
+flight RangeTest {
+  at t=0 {
+    angle = 45  // 45 degrees for larger range
+    power = 100%
+  }
+}
+
+simulate RangeTest {
+  display trajectory
+  report range
+}

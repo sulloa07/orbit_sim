@@ -1,0 +1,23 @@
+// fizzbuzz small vertical rocket launch demonstration
+rocket SmallRocket {
+  mass = 1.0 // kg (total mass)
+  fuel = 0.7 // kg (fuel mass)
+  thrust = 25 // N (otal thrust)
+  burnRate = 0.1 // kg/s (fuel consumption)
+  diameter = 0.05 // m (diameter of the rocket)
+  Cd = 1.14 // drag coefficient (assumed for a simple rocket)
+  fizzbuzz = true
+}
+flight Vertical {
+  at t=0 {
+    angle = 85 // almost vertical
+    power = 100% // full throttle
+  }
+}
+
+simulate Vertical {
+  display trajectory
+  report max_altitude
+  report range
+
+}

@@ -1,0 +1,50 @@
+rocket MarsExplorer {
+  mass = 95.0
+  fuel = 10.0
+  thrust = 1800
+  burnRate = 0.65
+  diameter = 0.55
+  Cd = 0.38
+}
+
+environment MarsAtmosphere {
+  gravity = 3.72
+}
+
+flight MarsExplorationMission {
+  at t=0 {
+    angle = 90
+    power = 100%
+  }
+  
+  at t=7 {
+    angle = 85
+  }
+  
+  at t=14 {
+    angle = 80
+    power = 95%
+  }
+
+  at t=22 {
+    angle = 75
+  }
+  
+  at t=30 {
+    angle = 70
+    power = 90%
+  }
+  
+  at t=38 {
+    angle = 65
+  }
+  
+
+
+}
+
+simulate MarsExplorationMission {
+  display trajectory
+  report max_altitude
+  report range
+}
